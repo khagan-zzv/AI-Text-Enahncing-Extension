@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Textarea Widget",
+  "version": "1.1",
+  "description": "Uses AI to imporve text in websites",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["img.png"],
+    "matches": ["<all_urls>"]
+  }]
+}
