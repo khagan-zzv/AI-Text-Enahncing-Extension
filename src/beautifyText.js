@@ -21,7 +21,7 @@ export async function insertHelloAndLogContent() {
             },
             body: JSON.stringify({
                 model: "gpt-4o",
-                input: "Beautify the following text and make it a better prompt: " + text,
+                input: "Beautify the following text and make it a better input without any additional note from you: " + text,
             })
         });
 
