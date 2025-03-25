@@ -1,10 +1,25 @@
 export function positionButtonNearElement(button, element) {
     if (!element || !button) return;
 
-    const rect = element.getBoundingClientRect();
-    const topPos = rect.top + window.scrollY + rect.height / 2 - 15;
-    const leftPos = rect.right + window.scrollX + 10;
+    // Get the parent element
+    const parentElement = element.parentElement;
 
-    button.style.top = `${topPos}px`;
-    button.style.left = `${leftPos}px`;
+    // Remove the button from body if it's there
+    if (button.parentElement === document.body) {
+        document.body.removeChild(button);
+    }
+
+    // Append button to parent element
+    parentElement.appendChild(button);
+
+    // Position the button relative to the parent
+    Object.assign(button.style, {
+        position: 'absolute',
+        top: '0',
+        right: '0',
+        transform: 'translate(50%, -50%)',
+        zIndex: '10',
+        margin: '0',
+        padding: '0'
+    });
 }

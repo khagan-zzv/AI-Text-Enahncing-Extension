@@ -11,14 +11,14 @@ function checkTextLength() {
     }
 
     const length = inputElement.value?.length || inputElement.innerText.length;
-    const button = document.querySelector("#insert-btn");
+    const existingButton = document.querySelector("#insert-btn");
 
     if (length > 20) {
-        if (!button) {
+        if (!existingButton) {
             const newButton = createButton();
             positionButtonNearElement(newButton, inputElement);
         } else {
-            positionButtonNearElement(button, inputElement);
+            positionButtonNearElement(existingButton, inputElement);
         }
     } else {
         removeButton();

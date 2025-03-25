@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Textarea Widget",
+  "name": "AI Text Improver",
   "version": "1.1",
   "description": "Uses AI to imporve text in websites",
   "permissions": ["scripting", "activeTab"],
