@@ -9,7 +9,6 @@ export function createButton() {
 
     button.innerHTML = `<img src="${chrome.runtime.getURL('img.png')}" alt="Beautify" style="width: 24px; height: 24px;" />`;
 
-    // Modify styles to use absolute positioning
     Object.assign(button.style, {
         position: "absolute",
         width: "28px",
@@ -27,7 +26,6 @@ export function createButton() {
         zIndex: "10"
     });
 
-    // Hover effect
     button.onmouseover = () => {
         button.style.transform = "translate(50%, -50%) scale(1.1)";
     };
