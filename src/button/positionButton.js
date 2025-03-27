@@ -15,8 +15,8 @@ export function positionButtonNearElement(button, element) {
     // Position the button relative to the parent
     Object.assign(button.style, {
         position: 'absolute',
-        top: '0',
-        right: '0',
+        top: '10px',
+        right: '25px',
         transform: 'translate(50%, -50%)',
         zIndex: '10',
         margin: '0',
