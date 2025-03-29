@@ -8,7 +8,6 @@ export function positionButtonNearElement(button, element) {
     const rect = range.getClientRects()[0];
     if (!rect) return;
 
-    // Append to body so we can position it globally
     if (button.parentElement !== document.body) {
         document.body.appendChild(button);
     }
