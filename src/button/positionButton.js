@@ -1,18 +1,24 @@
 export function positionButtonNearElement(button, element) {
     if (!element || !button) return;
 
-    const parentElement = element.parentElement;
-    if (button.parentElement === document.body) {
-        document.body.removeChild(button);
+    const selection = window.getSelection();
+    if (!selection.rangeCount) return;
+
+    const range = selection.getRangeAt(0);
+    const rect = range.getClientRects()[0];
+    if (!rect) return;
+
+    // Append to body so we can position it globally
+    if (button.parentElement !== document.body) {
+        document.body.appendChild(button);
     }
 
-    parentElement.appendChild(button);
     Object.assign(button.style, {
-        position: 'absolute',
-        top: '10px',
-        right: '25px',
-        transform: 'translate(50%, -50%)',
-        zIndex: '10',
+        position: 'fixed',
+        top: `${rect.bottom + 6}px`,
+        left: `${rect.right + 6}px`,
+        zIndex: '99999',
+        transform: 'none',
         margin: '0',
         padding: '0'
     });

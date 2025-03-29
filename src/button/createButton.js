@@ -22,16 +22,17 @@ export function createButton() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        transition: "all 0.3s ease",
+        transition: "transform 0.3s ease",
         zIndex: "10"
     });
 
     button.onmouseover = () => {
-        button.style.transform = "translate(50%, -50%) scale(1.1)";
+        button.style.transform = "scale(1.1)";
     };
     button.onmouseout = () => {
-        button.style.transform = "translate(50%, -50%)";
+        button.style.transform = "scale(1)";
     };
+
 
     button.addEventListener('click', async (event) => {
         event.stopPropagation();
